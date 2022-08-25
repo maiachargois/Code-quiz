@@ -113,6 +113,34 @@ const lastQuestion = questions.length - 1;
 
 let runningQuestion = 0;
 
+// render questions//
+
+function renderQuestion(){
+
+  let q = questions[runningQuestion];
+
+ 
+
+  question.innerHTML = "<p>"+ q.question +"</p>";
+
+  qImg.innerHTML = "<img src="+ q.imgSrc +">";
+
+  choiceA.innerHTML = q.choiceA;
+
+  choiceB.innerHTML = q.choiceB;
+
+  choiceC.innerHTML = q.choiceC;
+
+}
+// render progress //
+function renderProgress(){
+
+  for(let qIndex = 0; qIndex <= lastQuestion; qIndex++){
+
+      progress.innerHTML += "<div class='prog' id="+ qIndex +"></div>";
+
+  }
+}
 // Updates win count on screen and sets win count to client storage
 function setWins() {
   win.textContent = winCounter;
